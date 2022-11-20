@@ -14,17 +14,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         setContentView(binding.root)
-
-
-        binding.button.setOnClickListener {
-            displayGreeting()
-        }
+        binding.student = getStudent()
     }
 
-    private fun displayGreeting(){
-        binding.apply {
-            textView.text = "Hello! ${editTextTextPersonName.text}"
-        }
+    private fun getStudent(): Student{
+        return Student(1, "Vadim", "vadim@gmail.com ")
 
     }
 }
